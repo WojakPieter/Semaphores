@@ -35,13 +35,17 @@ In this terminal one can observe the process of creating product - its id (order
 Mechanism of each process is described below.
 
 1. Customer
+   
 A process responsible of placing order - putting an item to an order queue. Then, it randomizes a number from range [0.5*X, 1.5*X], where X is a parameter provided to the process while calling script_customers.sh. Finally, it sleeps for the randomized time and then places another order.
 
 2. Producer
+   
 A process which takes an order - removes an item from order queue - then takes a tool from a tool queue (unless there is no free tool), works (sleep) for a time appropriate for taken tool and finally puts back the tool and produces a product - puts an item to products queue.
 
 3. Deliver
+   
 A process with removes a product from product queue twice per second. Delivering the product to right customer itself is not a part of the project.
 
 4. Tool
+   
 An item used to produce the product. There are two tools in a queue - A and B. If tool A is taken, producer sleeps for 1 second before creating the product. If tool B - the operating time is 2 seconds.
