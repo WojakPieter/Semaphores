@@ -8,7 +8,7 @@ To start, compile main.cpp file. Remember to add -pthread flag.
 g++ main.cpp -o main.out -pthread
 ```
 
-Then call the output file. Two integers are required as a parameters.
+Then call the output file. Two integers are required as parameters.
 
 ```
 ./main.out <order_interval> <priority_order_interval>
